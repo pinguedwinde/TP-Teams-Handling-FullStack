@@ -1,0 +1,25 @@
+<section>
+  <div class="team-details-container" *ngIf="team">
+    <mat-card class="team-detail-title" color="primary">
+      <mat-card-title>The team's details</mat-card-title>
+    </mat-card>
+    <mat-card-content class="team-detail">
+      <span>Name : {{team.name}}</span>
+    </mat-card-content>
+    <mat-card-content class="team-detail">
+      <span>Slogan : {{team.slogan}}</span>
+    </mat-card-content>
+    <div class="details-buttons-container">
+      <button mat-raised-button color="primary" (click)="back()">
+        Back
+      </button>
+      <button mat-raised-button color="primary" (click)="goToEditTeam()">
+        Edit
+      </button>
+      <button mat-raised-button color="primary" (click)="goToRemoveTeam()">
+        Remove
+      </button>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,38 @@
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  flex-grow: 1;
+}
+
+.header-title-container{
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+h1{
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.menu-buttons-container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+.menu-title-content{
+  display: flex;
+  align-self: flex-end;
+  font-size: 1.05em;
+}
+

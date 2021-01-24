@@ -1,0 +1,62 @@
+<!-- Angular Component to create a header -->
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <div class="flex-container">
+
+        <div style="flex-grow: 1">
+          <div class="button-container">
+            <button mat-button [matMenuTriggerFor]="menu" mat-mini-fab color="accent"
+                    aria-label="Icon button with a menu icon">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="navigateToTeamLst()">
+                <mat-icon>dialpad</mat-icon>
+                <span>List Teams</span>
+              </button>
+              <button mat-menu-item (click)="navigateToCreateTeam()">
+                <mat-icon>add</mat-icon>
+                <span>Add a team</span>
+              </button>
+              <button mat-menu-item (click)="navigateToUpdateTeam()">
+                <mat-icon>edit</mat-icon>
+                <span>Edit a team</span>
+              </button>
+              <button mat-menu-item (click)="navigateToDeleteTeam()">
+                <mat-icon>delete</mat-icon>
+                <span>Remove a team</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+
+        <div style="flex-grow: 1">
+          <div class="header-title-container">
+            <h1>Teams handling APP</h1>
+          </div>
+        </div>
+        <div style="flex-grow: 8">
+          <div class="menu-buttons-container">
+            <button mat-button color="accent" class="menu-title-content" (click)="navigateToTeamLst()">
+              <mat-icon>home</mat-icon>
+              <span>Home</span>
+            </button>
+            <button mat-button color="accent" class="menu-title-content" (click)="navigateToCreateTeam()">
+              <mat-icon>add</mat-icon>
+              <span>Add a team</span>
+            </button>
+            <button mat-button color="accent" class="menu-title-content" (click)="navigateToUpdateTeam()">
+              <mat-icon>edit</mat-icon>
+              <span>Edit a team</span>
+            </button>
+            <button mat-button color="accent" class="menu-title-content" (click)="navigateToDeleteTeam()">
+              <mat-icon>delete</mat-icon>
+              <span>Remove a team</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
