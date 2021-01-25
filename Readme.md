@@ -141,7 +141,7 @@ En effet Java 15 propose des features en cours de validation `enable-preview` et
 
 Parfois il y a besoin de configurer ça dans le plugin Maven surefire.
 
-Félicitation, vous venez de compiler et installer pour la première fois votre projet __backend/api Spring Boot__ :i_love_you_hand_sign:.
+Félicitation, vous venez de compiler et installer pour la première fois votre projet __backend/api Spring Boot__ :clap:.
 
 
 ### :rocket: Ajout du premier webservice REST
