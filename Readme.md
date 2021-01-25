@@ -15,7 +15,7 @@
 
 L'objectif de ce TP est de développer une application en __`fullstack`__ qui permet de gérer des équipes de Football.  
 
-Une partie __backend/api__ en __Spring boot__ permettra de gérer les équipes avec une base de données __`in memory H2`__ et d'exposer des __`endPoints`__ en REST.  
+Une partie __backend/api__ en __Spring boot__ permettra de gérer les équipes avec une base de données __`in pencilry H2`__ et d'exposer des __`endPoints`__ en REST.  
 __`Spring data JPA`__ et __`Hibernate`__ seront utilisés pour la partie accès aux données.    
 
 Une partie __frontend__ permettra de gérer les équipes via le framework __Angular 14__.
@@ -32,7 +32,7 @@ L'application va permettre :
 Même si nous apprécions particulièrement les architectures __`hexagonal`__ et le __`DDD :  Domain Driven Design`__, le choix pour ce TP a été de ne pas aborder ces concepts et s'est porté sur une architecture en couche classique avec une séparation __controller__, __service__ et __repository__.
 
 
-## :memo: Partie backend/API
+## :pencil: Partie backend/API
 
 ### :rocket: Installer l'open JDK 15 selon l'OS sur lequel vous travaillez (Windows, Linux, Mac)
 
@@ -377,7 +377,7 @@ Pour les clients de notre api, nous souhaitons renvoyer un statut Rest 400 (Bad 
 - Dans la classe TeamController, nous souhaitons renvoyer un statut 400 si l'exception est levée depuis la classe service. Trouver un moyen de renvoyer un statut 400 dans la classe controller sans faire de __`try catch`__. Utilisez la doc de Spring pour voir quelles sont les moyens proposés pour le faire.
 - Dans la classe __`TeamControllerTest`__, ajouter un nouveau test pour vérifier ce cas d'erreur. Pour nous faciliter la vie, nous allons utiliser Mockito pour mocker la méthode __`addTeam`__ de la classe __`TeamService`__, en simulant le cas où elle lève une `TeamInvalidException`. Utiliser ensuite Rest Assured pour tester le `Post` et faire l'assertion sur le statut 400.
 
-## :memo: Partie frontend
+## :pencil: Partie frontend
 
 Après avoir durement travaillé sur la partie backend et vérifier que tout fonctionnait correctement, nous passons à la partie front.
 
@@ -623,7 +623,7 @@ Aidez vous de la doc d'Angular Material qui est très complète.
 - Lors du clic sur cette icone, supprimer l'équipe concernée par la ligne en cours
 
 
-## :memo: Modification en fullStack avec ajout d'une liste de joueurs par équipe
+## :pencil: Modification en fullStack avec ajout d'une liste de joueurs par équipe
 
 
 ### :rocket: Backend
