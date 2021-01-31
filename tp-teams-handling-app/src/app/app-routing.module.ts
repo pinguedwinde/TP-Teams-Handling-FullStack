@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {TeamListPageComponent} from "@team-handling/teams/containers/team-list-page/team-list-page.component";
 import {TeamDetailPageComponent} from "@team-handling/teams/containers/team-detail-page/team-detail-page.component";
 import {TeamAddPageComponent} from "@team-handling/teams/containers/team-add-page/team-add-page.component";
+import {TeamEditPageComponent} from "@team-handling/teams/containers/team-edit-page/team-edit-page.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'team/add',
     component: TeamAddPageComponent
+  },
+  {
+    path: 'team/edit',
+    component: TeamEditPageComponent
   },
   {
     path: 'team/:id',

@@ -41,18 +41,6 @@ public class TeamServiceTest {
     }
 
     @Test
-    public void should_return_psg_when_team_name_is_psg(){
-        //Giving
-        TeamEntity teamEntity = teamService.findByName("PSG");
-
-        //When
-        String psg = "PSG";
-
-        //Then
-        assertThat(teamEntity.getName()).isEqualTo(psg);
-    }
-
-    @Test
     public void should_return_id_greater_than_0_for_newTeamEntity(){
         //Given
         TeamEntity newTeamEntity = new TeamEntity("AS Yennega", "L'amazone du Faso");

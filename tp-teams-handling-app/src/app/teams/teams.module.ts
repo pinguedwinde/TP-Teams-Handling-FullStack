@@ -13,6 +13,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
 import {RouterModule} from "@angular/router";
+import { TeamEditPageComponent } from './containers/team-edit-page/team-edit-page.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {RouterModule} from "@angular/router";
     TeamListPageComponent,
     TeamDetailPageComponent,
     TeamAddPageComponent,
-    TeamsHandlingHeaderComponent
+    TeamsHandlingHeaderComponent,
+    TeamEditPageComponent
   ],
   exports: [
     TeamsHandlingHeaderComponent

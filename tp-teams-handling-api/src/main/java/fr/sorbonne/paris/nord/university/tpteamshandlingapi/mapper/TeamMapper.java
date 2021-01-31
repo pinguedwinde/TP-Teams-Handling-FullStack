@@ -10,6 +10,7 @@ public class TeamMapper {
 
     public TeamEntity toEntity(TeamDTO teamDTO){
         TeamEntity teamEntity = new TeamEntity();
+        teamEntity.setId(teamDTO.getId());
         teamEntity.setName(teamDTO.getName());
         teamEntity.setSlogan(teamDTO.getSlogan());
         return teamEntity;

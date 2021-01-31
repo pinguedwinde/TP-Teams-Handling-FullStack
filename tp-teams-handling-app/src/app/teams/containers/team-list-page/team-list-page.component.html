@@ -1,6 +1,6 @@
 <div class="team-list-box">
   <mat-card class="team-list-title" color="primary">
-    <mat-card-title class="add-form-title-content">List of teams</mat-card-title>
+    <mat-card-title class="add-form-title-content">{{message}}</mat-card-title>
   </mat-card>
   <mat-card class="team-card-box" *ngFor="let team of teams;" (click)="onSelectTeam(team)">
     <mat-card-content>

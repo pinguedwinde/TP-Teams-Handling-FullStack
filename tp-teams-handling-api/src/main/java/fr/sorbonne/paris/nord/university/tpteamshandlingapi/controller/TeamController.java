@@ -1,6 +1,7 @@
 package fr.sorbonne.paris.nord.university.tpteamshandlingapi.controller;
 
 import fr.sorbonne.paris.nord.university.tpteamshandlingapi.dto.TeamDTO;
+import fr.sorbonne.paris.nord.university.tpteamshandlingapi.entity.TeamEntity;
 import fr.sorbonne.paris.nord.university.tpteamshandlingapi.mapper.TeamMapper;
 import fr.sorbonne.paris.nord.university.tpteamshandlingapi.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,11 +68,9 @@ public class TeamController {
 
     @PutMapping ("/teams/{id}")
     public ResponseEntity<TeamDTO> updateTeam(@RequestBody TeamDTO teamDTO){
-        TeamDTO teamToSave = teamMapper.toDTO(teamService.findById(teamDTO.getId()));
-        if(teamToSave != null){
-            teamToSave.setName(teamDTO.getName());
-            teamToSave.setSlogan(teamDTO.getSlogan());
-            return new ResponseEntity<>(teamMapper.toDTO(teamService.update(teamMapper.toEntity(teamToSave))), HttpStatus.OK);
+        TeamEntity updatedTeam = teamService.update(teamMapper.toEntity(teamDTO));
+        if(updatedTeam != null){
+            return new ResponseEntity<>(teamMapper.toDTO(updatedTeam), HttpStatus.OK);
         }else{
             return new ResponseEntity<>(teamDTO, HttpStatus.NOT_FOUND);
         }
@@ -87,7 +86,6 @@ public class TeamController {
         }else{
             return new ResponseEntity<>(teamDTO, HttpStatus.NOT_FOUND);
         }
-
     }
 
 

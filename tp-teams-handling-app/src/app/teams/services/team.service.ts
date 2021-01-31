@@ -11,6 +11,7 @@ import {catchError} from "rxjs/operators";
 export class TeamService {
 
   private subject = new BehaviorSubject<Team>({id: 0, name: '', slogan: ''});
+  private messageSubject = new BehaviorSubject<string>('List of teams');
   private teamsURL: string = `${environment.backendPoint}/teams`;
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -25,6 +26,14 @@ export class TeamService {
 
   pullTeam(): Observable<Team> {
     return this.subject.asObservable();
+  }
+
+  pushMessage(message: string): void {
+    this.messageSubject.next(message);
+  }
+
+  pullMessage(): Observable<string> {
+    return this.messageSubject.asObservable();
   }
 
   /**
@@ -51,7 +60,7 @@ export class TeamService {
    * POST : create a team on the Server TP-Handling-API
    */
   createTeam(team: Team): Observable<Team> {
-    return this.http.post<Team>(this.teamsURL, team)
+    return this.http.post<Team>(`${this.teamsURL}/${team.id}`, team)
       .pipe(
         catchError(this.handleError<Team>('createTeam', {name:'', slogan:''}))
       );
@@ -61,7 +70,7 @@ export class TeamService {
    * PUT : update the team  on the Server TP-Handling-API
    */
   updateTeam(team: Team): Observable<any>{
-    return this.http.put(this.teamsURL, team, this.httpOptions)
+    return this.http.put(`${this.teamsURL}/${team.id}`, team)
       .pipe(
         catchError(this.handleError<any>('updateTeam', {name:'', slogan:''}))
       );

@@ -74,8 +74,8 @@ public class TeamControllerTest {
 
     @Test
     public void should_return_200_when_request_update_team(){
-        when(teamService.findById(1L)).thenReturn(mockTeam1);
-        when(teamService.save(Mockito.any())).thenReturn(mockTeam1);
+        /*when(teamService.findById(1L)).thenReturn(mockTeam1);*/
+        when(teamService.update(Mockito.any())).thenReturn(mockTeam1);
 
         given()
                 .contentType("application/json")

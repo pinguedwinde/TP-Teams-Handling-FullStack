@@ -11,14 +11,17 @@ import {Router} from "@angular/router";
 export class TeamListPageComponent implements OnInit {
 
   teams: Team[] | [];
+  message: string;
 
   constructor(private teamService: TeamService,
               private router: Router) {
     this.teams = [];
+    this.message = '';
   }
 
   ngOnInit(): void {
     this.teamService.getTeams().subscribe(teams => this.teams =  teams);
+    this.teamService.pullMessage().subscribe(m => this.message = m);
   }
 
   onSelectTeam(team: Team): void{
