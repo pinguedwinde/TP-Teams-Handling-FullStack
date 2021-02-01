@@ -60,7 +60,7 @@ export class TeamService {
    * POST : create a team on the Server TP-Handling-API
    */
   createTeam(team: Team): Observable<Team> {
-    return this.http.post<Team>(`${this.teamsURL}/${team.id}`, team)
+    return this.http.post<Team>(this.teamsURL, team)
       .pipe(
         catchError(this.handleError<Team>('createTeam', {name:'', slogan:''}))
       );
@@ -70,10 +70,26 @@ export class TeamService {
    * PUT : update the team  on the Server TP-Handling-API
    */
   updateTeam(team: Team): Observable<any>{
-    return this.http.put(`${this.teamsURL}/${team.id}`, team)
+    return this.http.put(`${this.teamsURL}/${team.id}`, team, this.httpOptions)
       .pipe(
         catchError(this.handleError<any>('updateTeam', {name:'', slogan:''}))
       );
+  }
+
+  /**
+   * DELETE : delete the team  on the Server TP-Handling-API
+   */
+  deleteTeam(id: number | undefined): Observable<any>{
+
+    if(id != undefined){
+      return this.http.delete(`${this.teamsURL}/${id}`, this.httpOptions)
+        .pipe(
+          catchError(this.handleError<any>('deleteTeam', {name:'', slogan:''}))
+        );
+    }else{
+      return of({id:0, name:'', slogan:''});
+    }
+
   }
 
   /**
